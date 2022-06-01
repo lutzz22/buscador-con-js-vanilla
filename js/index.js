@@ -21,8 +21,23 @@ const autos = [
 
 window.onload = function(){
  //1.COLOCÁ ACÁ EL CÓDIGO PARA SETEAR TODOS LOS AUTOS EN PROMOCIÓN
-   alert("Esta funcionando");     
+   alert("Esta funcionando");
+   mostrarAutos()     
 }
 
-
+const card = document.querySelector('#cards')
+mostrarAutos = () => {
+  autos.forEach (auto => {
+    card.innerHTML += ` <div class="col-sm-4 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Marcas ${auto.marca}</h5>
+        <p class="card-text">Modelo ${auto.modelo}- Color ${auto.color}</p>
+        <p class="h6">Precio $${auto.precio}</p>
+        <a href="#" class="btn btn-warning">Mas info +</a>
+      </div>
+    </div>
+  </div>`
+  })
+}
 //2.CREA UNA FUNCIÓN ACÁ PARA FILTRAR LOS AUTOS POR MARCA
